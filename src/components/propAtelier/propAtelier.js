@@ -49,7 +49,7 @@ export default class PropAtelier extends Component {
                             <td>{obj.titre}</td>
                             <td>{obj.prix}</td>
                             <td id="des">{obj.description}</td>
-                            <td>nante
+                            <td>
                                 <img width="150px" height="50px" src={'https://henrikely.herokuapp.com/api/users/newArticleImage/' + obj.image} alt="pdp" />
                             </td>
                             <td>{obj.duree} </td>
