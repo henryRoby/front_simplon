@@ -60,7 +60,7 @@ export default class PropAtelier extends Component {
 
                             {obj.visib == true ? (<button  class="btn btn-success" onClick={(e) => {
                                 e.preventDefault()
-                                axios.get(" https://henrikely.herokuapp.com/api/users/cacherAtl/" + obj._id).then(res => {
+                                axios.get("https://henrikely.herokuapp.com/api/users/cacherAtl/" + obj._id).then(res => {
                                     axios.get('https://henrikely.herokuapp.com/api/users/newArticle/' + localStorage.id).then(res => {
                                         console.log(res.data)
                                         this.setState({ profil: res.data })
