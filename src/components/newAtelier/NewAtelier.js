@@ -76,7 +76,7 @@ class NewAtelier extends React.Component {
               </div>
             </div>
 
-          </div>
+         
           <br />
           <br />
           <div className="row">
@@ -122,7 +122,7 @@ class NewAtelier extends React.Component {
             </div>
             <div className="col-md-6">
             <div className="col-md-6">
-              <input className="form-control" type="date"
+              <input className="form-control" type="text"
                 value={this.state.value}
                 onChange={this.onChange}
                 name="description" placeholder="Description" />
@@ -139,7 +139,7 @@ class NewAtelier extends React.Component {
           </div>
 
 
-
+          </div>
 
         </form>
       </div>

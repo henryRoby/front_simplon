@@ -25,9 +25,9 @@ export default class PropAtelier extends Component {
     }
 
     liste() {
-        return  <div className ="container">
+        return  <div className ="container"   id="tableau">
         
-        <table className="table table-bordered" id="tableau">
+        <table className="table table-bordered">
             <thead>
                 <tr>
                     <th>titre</th>
