@@ -38,7 +38,7 @@ handleUploadImage(ev) {
   data.append('idUser', localStorage.id);
   data.append('description', this.state.description)
 
-  fetch('https://henrikely.herokuapp.com/api/users/putArticle/'+ this.props.match.params.id, {
+  fetch('https://mampmeback.herokuapp.com/api/users/putArticle/'+ this.props.match.params.id, {
     method: 'PUT',
     body: data,
   }).then((response) => {
@@ -47,7 +47,7 @@ handleUploadImage(ev) {
       
       
     response.json().then((body) => {
-      this.setState({ image: `https://henrikely.herokuapp.com/api/users/newArticle/${body.image}` });
+      this.setState({ image: `https://mampmeback.herokuapp.com/api/users/newArticle/${body.image}` });
       console.log('ity ilay body.image', body.image);
 
     });
@@ -89,13 +89,12 @@ handleUploadImage(ev) {
 
               <div className="col-md-6">
 
-                <input className="form-control" type="time"
+                <input className="form-control" type="text"
                   value={this.state.value}
                   onChange={this.onChange}
-                  name="duree" placeholder="duree" />
+                  name="description" placeholder="Description" />
 
               </div>
-            
             </div>
            
             <br />
@@ -108,7 +107,10 @@ handleUploadImage(ev) {
               </div>
               <div className="col-md-6">
                 
-              
+                <input className="form-control" type="time"
+                  value={this.state.value}
+                  onChange={this.onChange}
+                  name="duree" placeholder="Durée" />
               </div>
             </div>
 
@@ -121,10 +123,7 @@ handleUploadImage(ev) {
                   name="date" placeholder="Date" />
               </div>
               <div className="col-md-6">
-              <input className="form-control" type="text"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="description" placeholder="description" />
+               
               </div>
             </div>
             <br />
