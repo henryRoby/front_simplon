@@ -29,7 +29,7 @@ handleUploadImage(ev) {
   data.append('email', this.state.email);
   data.append('phone', this.state.phone)
 
-  fetch('https://henrikely.herokuapp.com/api/users/particulier/', {
+  fetch('https://mampmeback.herokuapp.com/api/users/particulier/', {
     method: 'POST',
     body: data,
   }).then((response) => {

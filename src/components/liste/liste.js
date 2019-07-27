@@ -11,8 +11,9 @@ export default class ListTout extends Component {
 
     }
     componentDidMount() {
-        axios.get('https://henrikely.herokuapp.com/api/users/newArticle')
+        axios.get('https://mampmeback.herokuapp.com/api/users/newArticle')
             .then(response => {
+
                 console.log('i am a response', response)
                 this.setState({ produit: response.data });
                 console.log('i am a produit', this.state.produit)
@@ -35,7 +36,7 @@ export default class ListTout extends Component {
                             <div id="ligne" className="card" key={obj._id}>
                                 <div className="container">
                                     <center><img className="card " width="50%" height="5%"
-                                        src={'https://henrikely.herokuapp.com/api/users/newArticleImage/' + obj.image}
+                                        src={'https://mampmeback.herokuapp.com/api/users/newArticleImage/' + obj.image}
                                         alt="pdp" /></center>
                                     
                                 </div>
@@ -48,7 +49,7 @@ export default class ListTout extends Component {
 
                                             <p className="card-text"><strong><span id="description">Description</span></strong>&nbsp;&nbsp; <div id="point">{obj.description}</div> </p>
                                             <p className="card-text"><strong><span id="description">Date</span></strong>&nbsp;&nbsp; <div id="point">{obj.date}</div> </p>
-                                            <p className="card-text"><strong><span id="description">Nombre de place disponible</span></strong>&nbsp;&nbsp; <div id="point">{obj.place}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Nombre de place disponible</span></strong>&nbsp;&nbsp; <div id="point">{obj.duree}</div> </p>
                                         </div>
                                         <div className="col-md-6">
                                             <p className="card-text"><strong><span id="description">Horaire de debut</span></strong>&nbsp;&nbsp; <div id="point">{obj.debut}</div> </p>
@@ -75,7 +76,7 @@ export default class ListTout extends Component {
                                                                     <input name="email" placeholder="Email" onChange={this.handleChange} value={this.state.value} /><br></br>
 
                                                                     <button type="button" class="btn btn-warning" onClick={() => {
-                                                                        axios.post("https://henrikely.herokuapp.com/api/users/particulier/" + obj._id, {
+                                                                        axios.post("https://mampmeback.herokuapp.com/api/users/particulier/" + obj._id, {
                                                                             nom: this.state.nom,
                                                                             prenom: this.state.prenom,
                                                                             phone: this.state.phone,
@@ -83,7 +84,7 @@ export default class ListTout extends Component {
 
                                                                         }).then(res => {
                                                                             console.log(res.data);
-                                                                            axios.get("https://henrikely.herokuapp.com/api/users/newArticle").then(res => {
+                                                                            axios.get("https://mampmeback.herokuapp.com/api/users/newArticle").then(res => {
 
                                                                                 this.setState({ profil: res.data })
                                                                                 console.log(this.state.profil)
