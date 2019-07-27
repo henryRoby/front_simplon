@@ -27,8 +27,8 @@ export default class PropAtelier extends Component {
     liste() {
         return  <div className ="container"   id="tableau">
         
-        <div className="table table-bordered">
-            {/* <thead>
+        <table className="table table-bordered">
+            <thead>
                 <tr>
                     <th>titre</th>
                     <th>prix</th>
@@ -40,26 +40,26 @@ export default class PropAtelier extends Component {
                     <th>P.disponible</th>
                     <th>actions</th>
                 </tr>
-            </thead> */}
+            </thead>
             <tbody>
                 {
                     (this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
 
                         return <tr key={obj._id}>
-                              <label>Titre</label>
-                             <p>
+                            <td>{obj.titre}</td>
+                            <td>{obj.prix}</td>
+                            <td id="des">{obj.description}</td>
+                            <td>
                                 <img width="150px" height="50px" src={'https://henrikely.herokuapp.com/api/users/newArticleImage/' + obj.image} alt="pdp" />
-                            </p>
-                                 <p>{obj.titre}</p> <br/>
-                            <label>Prix</label> <br/> <p>{obj.prix}</p>
-                            <label>Description</label> <br/> <p id="des">{obj.description}</p>
-                            <label>Durer</label> <br/> <p>{obj.duree} </p>
-                            <label>Place reservée</label> <br/> <p>{obj.placeRes}</p>
-                            <label>Date</label> <br/> <p>{obj.date}</p>
-                            <label>Place disponible</label> <br/> <p>{obj.place}</p>
-                            <div>
+                            </td>
+                            <td>{obj.duree} </td>
+                            <td>{obj.placeRes}</td>
+                            <td>{obj.date}</td>
+                            <td>{obj.place}</td>
+                            <td>
                                 <Link to={"/modifierAtl/" + obj._id}  class="btn btn-warning">Modifier</Link>
                            
+
                             {obj.visib == true ? (<button  class="btn btn-success" onClick={(e) => {
                                 e.preventDefault()
                                 axios.get("https://henrikely.herokuapp.com/api/users/cacherAtl/" + obj._id).then(res => {
@@ -82,13 +82,13 @@ export default class PropAtelier extends Component {
                                     console.log(res.data)
                                 })
 
-                            }}></button>)}</div>
+                            }}></button>)}</td>
                         </tr>
 
                     })) : ('')
                 }
             </tbody>
-        </div>
+        </table>
 
         </div>
     }
