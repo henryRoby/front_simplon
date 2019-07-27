@@ -70,7 +70,7 @@ handleUploadImage(ev) {
               </div>
               <div className="col-md-6">
 
-              <input className="form-control" type="number"
+              <input className="form-control" type="text"
                   value={this.state.value}
                   onChange={this.onChange}
                   name="prix" placeholder="Prix" />
@@ -108,10 +108,7 @@ handleUploadImage(ev) {
               </div>
               <div className="col-md-6">
                 
-                <input className="form-control" type="number"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="placeRes" placeholder="Durée" />
+              
               </div>
             </div>
 

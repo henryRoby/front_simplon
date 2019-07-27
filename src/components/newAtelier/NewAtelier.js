@@ -106,10 +106,10 @@ class NewAtelier extends React.Component {
                 name="place" placeholder="Nombre des places" />
             </div>
             <div className="col-md-6">
-              <input className="form-control" type="time"
+              <input className="form-control" type="number"
                 value={this.state.value}
                 onChange={this.onChange}
-                name="placeRes" placeholder="number" />
+                name="placeRes" placeholder="Place reservées" />
             </div>
           </div>
           <br />
