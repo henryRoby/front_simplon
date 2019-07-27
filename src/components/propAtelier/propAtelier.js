@@ -25,7 +25,9 @@ export default class PropAtelier extends Component {
     }
 
     liste() {
-        return <table className="table table-bordered" id="tableau">
+        return  <div className ="container">
+        
+        <table className="table table-bordered" id="tableau">
             <thead>
                 <tr>
                     <th>titre</th>
@@ -87,6 +89,8 @@ export default class PropAtelier extends Component {
                 }
             </tbody>
         </table>
+
+        </div>
     }
     render() {
         return (
