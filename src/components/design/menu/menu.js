@@ -22,7 +22,7 @@ export default class Menu extends Component {
         });
     }
     render() {
-        let imgUrl = './images.jpeg'
+        let imgUrl = 'https://file1.pleinevie.fr/var/pleinevie/storage/images/article/10-aliments-prix-d-excellence-pour-la-sante-16025/100017-1-fre-FR/10-aliments-prix-d-excellence-pour-la-sante_width1024.jpg'
         return (
             <div>
                 <MDBNavbar color="#d05c62" dark expand="md" id="navbar">
@@ -52,7 +52,7 @@ export default class Menu extends Component {
                     backgroundImage: 'url(' + imgUrl + ')',
                     backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat',
                 }}>
-                    <div className="text-white text-center rgba-stylish-strong py-5 px-4">
+                    <div className="text-white text-center  py-5 px-4">
                         <div className="py-5">
                             <h2 id="h2accueil"><strong>Cuisinier</strong> </h2>
                             <p className="mb-4 pb-2 px-md-5 mx-md-5">Nous sommes un centre de formation de cuisine qui propose des ateliers à nos élèves à
