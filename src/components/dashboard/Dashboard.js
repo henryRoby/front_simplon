@@ -25,7 +25,7 @@ onLogoutClick = e => {
       <div>
        <Menu/>
       <div className="container-fluid" id="dash">
-      <div className=" valign-wrapper">
+      
         <div className="container-fluid">
         
      
@@ -34,23 +34,23 @@ onLogoutClick = e => {
             <h4>
              Henri
             </h4>
-            <button id="ajoutbouton" onClick={()=>{
+            <button className="btn btn-secondary" id="ajoutbouton" onClick={()=>{
               document.getElementById('ajoutatelier').style.display = "block"
               document.getElementById('tableau').style.display ="none"
             }}>
                 Ajouter
             </button>
-            <button  id="listerbout" onClick={()=>{
+            <button  id="listerbout" className="btn btn-secondary" onClick={()=>{
                   document.getElementById('tableau').style.display = "block"
                   document.getElementById('ajoutatelier').style.display = "none"
               }}>
                   Listes des ateliers
               </button>
-            <button  id="deconnect"
+             
+          <button  id="deconnect"
               style={{
                 width: "150px",
                 borderRadius: "5px",
-                
                 marginTop: "1rem"
               }}
               onClick={this.onLogoutClick}
@@ -58,8 +58,10 @@ onLogoutClick = e => {
             >
               Deconnecter
             </button>
+           
+            
           </div>
-
+        
           <div className= "col-md-10">
           <Ajoutatelier/>
           <PropAtelier/>
@@ -70,7 +72,6 @@ onLogoutClick = e => {
       
       </div>
 
-      </div>
     );
   }
 }

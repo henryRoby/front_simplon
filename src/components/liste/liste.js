@@ -43,25 +43,25 @@ export default class ListTout extends Component {
                                 <center>
                                 <div className="card-body card-body-cascade">
 
-                                    <center><h2 id="description"><span id="nomproduit">{obj.titre}</span></h2></center>
+                                    <center><h1 id="description"><strong id="nomproduit">{obj.titre}</strong></h1></center>
                                     <div className="row">
                                         <div className="col-md-6">
 
-                                            <p className="card-text"><strong><span id="description">Description</span></strong>&nbsp;&nbsp; <div id="point">{obj.description}</div> </p>
-                                            <p className="card-text"><strong><span id="description">Date</span></strong>&nbsp;&nbsp; <div id="point">{obj.date}</div> </p>
-                                            <p className="card-text"><strong><span id="description">Nombre de place disponible</span></strong>&nbsp;&nbsp; <div id="point">{obj.duree}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Description</span>:</strong>&nbsp;&nbsp; <div id="point">{obj.description}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Date</span>:</strong>&nbsp;&nbsp; <div id="point">{obj.date}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Nombre de place disponible</span>:</strong>&nbsp;&nbsp; <div id="point">{obj.place}</div> </p>
                                         </div>
                                         <div className="col-md-6">
-                                            <p className="card-text"><strong><span id="description">Horaire de debut</span></strong>&nbsp;&nbsp; <div id="point">{obj.debut}</div> </p>
-                                            <p className="card-text" id="colonne2"><strong><span id="description">Durée de l'atelier</span></strong>&nbsp;&nbsp; <div id="point">{obj.duree}</div> </p>
-                                            <p className="card-text"><strong><span id="description">Nombre de place reserve</span></strong>&nbsp;&nbsp; <div id="point">{obj.placeRes}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Horaire de debut</span>:</strong>&nbsp;&nbsp; <div id="point">{obj.debut}</div> </p>
+                                            <p className="card-text" id="colonne2"><strong><span id="description">Durée de l'atelier</span>:</strong>&nbsp;&nbsp; <div id="point">{obj.duree}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Nombre de place reserve</span>:</strong>&nbsp;&nbsp; <div id="point">{obj.placeRes}</div> </p>
                                         </div>
                                     </div>
                                     <span className="spanprix">
                                         <strong>Prix: {obj.prix} Ar</strong>
                                     </span><br />
                                     
-                                        <button class="btn btn-success" onClick={() => {
+                                    <button class="btn btn-success" id="inscription" onClick={() => {
                                             confirmAlert({
                                                 customUI: ({ onClose }) => {
                                                     return (
@@ -70,13 +70,13 @@ export default class ListTout extends Component {
                                                                 <div >
                                                                     <h4> {obj.Titre}</h4>
                                                                     <input name="nom" onChange={this.handleChange}
-                                                                        value={this.state.value} placeholder="Nom" /><br></br>
+                                                                    value={this.state.value} placeholder="Nom" /><br></br>
                                                                     <input name="prenom" placeholder="Prenom" onChange={this.handleChange} value={this.state.value} /><br></br>
                                                                     <input name="phone" placeholder="Numero téléphone" onChange={this.handleChange} value={this.state.value} /><br></br>
                                                                     <input name="email" placeholder="Email" onChange={this.handleChange} value={this.state.value} /><br></br>
 
                                                                     <button type="button" class="btn btn-warning" onClick={() => {
-                                                                        axios.post("https://mampmeback.herokuapp.com/api/users/particulier/" + obj._id, {
+                                                                        axios.post("https://henrikely.herokuapp.com/api/users/particulier/" + obj._id, {
                                                                             nom: this.state.nom,
                                                                             prenom: this.state.prenom,
                                                                             phone: this.state.phone,
@@ -84,7 +84,7 @@ export default class ListTout extends Component {
 
                                                                         }).then(res => {
                                                                             console.log(res.data);
-                                                                            axios.get("https://mampmeback.herokuapp.com/api/users/newArticle").then(res => {
+                                                                            axios.get("https://henrikely.herokuapp.com/api/users/newArticle").then(res => {
 
                                                                                 this.setState({ profil: res.data })
                                                                                 console.log(this.state.profil)
