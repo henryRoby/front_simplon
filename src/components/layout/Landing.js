@@ -6,8 +6,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row">
-        </div>
+        <center><h1 id ="bienvenu"> BIENVENUE </h1></center> 
       </div>
     );
   }

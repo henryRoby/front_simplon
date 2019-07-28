@@ -122,7 +122,7 @@ handleUploadImage(ev) {
             </div>
           
             <div className="col-md-6">
-              <input className="form-control" type="text"
+              <input className="form-control" id="description" type="text"
                 value={this.state.value}
                 onChange={this.onChange}
                 name="description" placeholder="Description" /> 
