@@ -25,68 +25,75 @@ export default class PropAtelier extends Component {
     }
 
     liste() {
-        return <table className="table table-bordered" id="tableau">
-            <thead>
-                <tr>
-                    <th>titre</th>
-                    <th>prix</th>
-                    <th>description</th>
-                    <th>photo</th>
-                    <th>Durée</th>
-                    <th>Reservation</th>
-                    <th>Date</th>
-                    <th>P.disponible</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    (this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
+        return <div className="name" id="tableau">
+<div className="row view-group" >
+                {this.state.profil.length > 0 ? (
 
-                        return <tr key={obj._id}>
-                            <td>{obj.titre}</td>
-                            <td>{obj.prix}</td>
-                            <td id="des">{obj.description}</td>
-                            <td>
-                                <img width="150px" height="50px" src={'https://mampmeback.herokuapp.com/api/users/newArticleImage/' + obj.image} alt="pdp" />
-                            </td>
-                            <td>{obj.duree} </td>
-                            <td>{obj.placeRes}</td>
-                            <td>{obj.date}</td>
-                            <td>{obj.place}</td>
-                            <td>
-                                <Link to={"/modifierAtl/" + obj._id}  class="btn btn-warning">Modifier</Link>
-                           
+            (this.state.profil.map((user) => (
 
-                            {obj.visib == true ? (<button  class="btn btn-success" onClick={(e) => {
-                                e.preventDefault()
-                                axios.get("https://mampmeback.herokuapp.com/api/users/cacherAtl/" + obj._id).then(res => {
-                                    axios.get('https://mampmeback.herokuapp.com/api/users/newArticle/' + localStorage.id).then(res => {
+                        <div class="item col-xs-4 col-lg-4">
+
+                            <div className="card card-cascade narrower card-ecommerce"   id="list">
+                            <img width="auto" height="200px" src={'https://mampmeback.herokuapp.com/api/users/newArticleImage/' + user.image} alt="image" />
+
+                                <div className="card-body card-body-cascade">
+
+                                    <center><h6 id="description"><span id="nomproduit">{user.titre}</span></h6></center>
+                                    <div className="row">
+                                        <div className="col-md-6">
+
+                                            <p className="card-text"><strong><span id="description">Description</span></strong>&nbsp;&nbsp; <div id="point">{user.description}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Date</span></strong>&nbsp;&nbsp; <div id="point">{user.date}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Nombre de place disponible</span></strong>&nbsp;&nbsp; <div id="point">{user.place}</div> </p>
+                                            <p><Link to={"/modifierAtl/" + user._id} class="btn btn-warning">Modifier</Link></p>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <p className="card-text"><strong><span id="description">Horaire de debut</span></strong>&nbsp;&nbsp; <div id="point">{user.horaire}</div> </p>
+                                            <p className="card-text" id="colonne2"><strong><span id="description">Durée de l'atelier</span></strong>&nbsp;&nbsp; <div id="point">{user.duree}</div> </p>
+                                            <p className="card-text"><strong><span id="description">Nombre de place reserve</span></strong>&nbsp;&nbsp; <div id="point">{user.placeRes}</div> </p>
+                                            <p>{user.visib == true ? (<button class="btn btn-success" id="Activer" onClick={(e) => {
+                                    e.preventDefault()
+                                    axios.get("https://mampmeback.herokuapp.com/api/users/cacherAtl/" + user._id).then(res => {
+                                        axios.get('https://mampmeback.herokuapp.com/api/users/newArticle/' + localStorage.id).then(res => {
+                                            console.log(res.data)
+                                            this.setState({ profil: res.data })
+                                        })
                                         console.log(res.data)
-                                        this.setState({ profil: res.data })
                                     })
-                                    console.log(res.data)
-                                })
 
 
-                            }}></button>) : (<button   class="btn btn-warning" onClick={(e) => {
-                                e.preventDefault()
-                                console.log(obj._id)
-                                axios.get("https://mampmeback.herokuapp.com/api/users/affichAtl/" + obj._id).then(res => {
-                                    axios.get('https://mampmeback.herokuapp.com/api/users/newArticle/' + localStorage.getItem('id')).then(res => {
+                                }}>Activer</button>) : (<button class="btn btn-warning" id="Desactiver" onClick={(e) => {
+                                    e.preventDefault()
+                                    console.log(user._id)
+                                    axios.get("https://mampmeback.herokuapp.com/api/users/affichAtl/" + user._id).then(res => {
+                                        axios.get('https://mampmeback.herokuapp.com/api/users/newArticle/' + localStorage.getItem('id')).then(res => {
+                                            console.log(res.data)
+                                            this.setState({ profil: res.data })
+                                        })
                                         console.log(res.data)
-                                        this.setState({ profil: res.data })
                                     })
-                                    console.log(res.data)
-                                })
 
-                            }}></button>)}</td>
-                        </tr>
+                                }}>Desactiver</button>)}</p>
+                                        </div>
+                                    </div>
+                                    <span className="spanprix">
+                                        <strong>Prix: {user.prix} Ar</strong>
+                                    </span><br />
 
-                    })) : ('')
-                }
-            </tbody>
-        </table>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    ))
+                )) : (''
+                    )}
+            </div>
+
+
+
+            </div>
     }
     render() {
         return (

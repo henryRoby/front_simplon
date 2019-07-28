@@ -57,88 +57,97 @@ handleUploadImage(ev) {
   render() {
     return (
       <div className="container-fluid">
-        <form onSubmit={this.handleUploadImage} className="md-form">
-          <div className="form-group mx-sm-3 mb-2 ">
-            <div className="row">
-              <div className="col-md-6">
+      <form onSubmit={this.handleUploadImage} className="md-form">
 
-              <input className="form-control" type="text"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="titre" placeholder="Titre" />
+      <a href="/dashboard"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;<strong> Retour</strong></a>
+        <div className="form-group mx-sm-3 mb-2 "  id="Edit">
+        
+          <div className="row">
+            <div className="col-md-6">
 
-              </div>
-              <div className="col-md-6">
+            <input className="form-control" type="text"
+                value={this.state.value}
+                onChange={this.onChange}
+                name="titre" placeholder="Titre" />
 
-              <input className="form-control" type="text"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="prix" placeholder="Prix" />
-                
-              </div>
             </div>
-            <br />
-            <br />
-            <div className="row">
-              <div className="col-md-6">
+            <div className="col-md-6">
+
+            <input className="form-control" type="text"
+                value={this.state.value}
+                onChange={this.onChange}
+                name="prix" placeholder="Prix" />
+              
+            </div>
+          </div>
+          <br />
+          <br />
+          <div className="row">
+            <div className="col-md-6">
+            <input className="form-control" type="time"
+                value={this.state.value}
+                onChange={this.onChange}
+                name="debut" placeholder="Debut" />
+            </div>
+
+            <div className="col-md-6">
+
               <input className="form-control" type="time"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="debut" placeholder="Debut" />
-              </div>
+                value={this.state.value}
+                onChange={this.onChange}
+                name="duree" placeholder="duree" />
 
-              <div className="col-md-6">
-
-                <input className="form-control" type="text"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="description" placeholder="Description" />
-
-              </div>
             </div>
-           
-            <br />
-            <div className="row">
-              <div className="col-md-6">
-              <input className="form-control" type="number"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="place" placeholder="Nombre des places" />
-              </div>
-              <div className="col-md-6">
-                
-                <input className="form-control" type="time"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="duree" placeholder="Durée" />
-              </div>
+          
+          </div>
+         
+          <br />
+          <div className="row">
+            <div className="col-md-6">
+            <input className="form-control" type="number"
+                value={this.state.value}
+                onChange={this.onChange}
+                name="place" placeholder="Nombre des places" />
             </div>
-
-            <br />
-            <div className="row">
-              <div className="col-md-6">
-              <input className="form-control" type="date"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  name="date" placeholder="Date" />
-              </div>
-              <div className="col-md-6">
-               
-              </div>
-            </div>
-            <br />
+            <div className="col-md-6">
+              
             
-            <div className="row">
-            <input ref={(ref) => { this.uploadInput = ref; }} type="file" name="image" />
-                <button id="validate" className="btn btn-info">Publier</button>
-       
             </div>
-            
-            
           </div>
 
-        </form>
-      </div>
+          <br />
+          <div className="row">
+            <div className="col-md-6">
+            <input className="form-control" type="date"
+                value={this.state.value}
+                onChange={this.onChange}
+                name="date" placeholder="Date" />
+            </div>
+            <div className="col-md-6">
+            <input className="form-control" type="text"
+                value={this.state.value}
+                onChange={this.onChange}
+                name="description" placeholder="description" />
+            </div>
+          </div>
+          <br />
+          
+          <div className="row">
+          <div className="col-md-6">
+                      <label className="btn btn-default btn-file">
+                            image<input ref={(ref) => { this.uploadInput = ref; }} type="file" name="image"   required/>
+                            </label>
+                      </div>
+                      <div className="col-md-6">
+                      <button id="btn-publier" className="btn btn-info">Valider</button>
+                      </div>
+          </div>
+          
+          
+        </div>
+
+      </form>
+    </div>
 
     );
   }

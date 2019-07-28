@@ -27,40 +27,49 @@
     width: 100px
 }
 
-#deconnect{
-    height:20% !important;
-    width:70% !important;
-    margin-right:50%;
-}
 
 
 #ligne{
- background-color: #f7cab3;
+    background-image: linear-gradient(to top, #fddb92 0%,#f5efef 100%); 
+    /* background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%); */
+
 }
 
 
-#mail{
-    background-color: #f3671f;
-    border-radius:4%;
-    width:350px;
-    padding:8px;
-}
+
 
 #ajoutbouton{
-    background-color: #f07f47;
-    padding-right:41%;
-}
-
-
-#deconnect{
-    height:20% !important;
-    width: 70% !important;
-    margin-right:60% !important;
+    background-color: #f07f47 !important;
+    border-color: #f07f47;
+    width: 180px;
+   
+    text-align: center !important;
    
 }
+#ajoutbouton:hover {
+    font-weight: bold;
+}
 
+#deconnect {
+    background-color: #d05c62 !important;
+    height: 30px !important;
+    font-size: 14px;
+    color: white;
+    width: 180px !important; 
+   line-height: 50%;
+}
+#deconnect:hover {
+    font-weight: bold;
+}
 #listerbout{
-    background-color: #f07f47;
+    background-color: #f07f47 !important;
+    border-color: #f07f47 !important;
+    font-size: 13px;
+    width: 180px;
+   
+}
+#listerbout:hover {
+    font-weight: bold;
 }
 
 #feedback-form button[type=submit] {
@@ -77,24 +86,86 @@
 
 
 
-
-#fichier{ 
-    padding: 10px; 
-    background: rgb(88, 85, 85); 
-    display: table; 
-    color: #fff; 
-    width: 100px; 
-    height: 30px; 
-    border-radius: 2px; 
-    text-align: center; 
-    float: right; 
-    margin-top: 10px; 
-    padding-top: 5px!important; 
-    line-height: 30px;
-    font-weight: bold
-  }
-
+           .btn-file {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer !important;
+        }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            cursor: inherit;
+            display: block;
+        }
 
 #fotera{
     background-color: #f3671f;
 }
+#btn-publier {
+    margin-top: 18px;
+}
+@media only screen and (max-width: 600px) {
+    #btn-publier {
+     margin-top: 100px;
+     margin-left:8px !important;
+    }
+    .btn-file {
+        margin-left: 25px !important;
+    }
+
+
+#Edit{
+ 
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    padding:25px;
+    border-radius:10px;
+
+}
+   }
+
+
+#Edit{
+    
+    background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);
+    padding:25px;
+    border-radius:10px;
+
+}
+
+#nomproduit{
+    font-weight: bold;
+    font-size: 25px !important;
+}
+
+
+#Activer{
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%) !important;
+}
+
+#Desactiver{
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+
+
+#list{
+   background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%); 
+}
+
+#inscription{
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+}
+
+#mail{
+    background-image: linear-gradient(to right, #243949 0%,  #d1fdff 100%);
+    width:500px ;
+    border-radius: 10px;
+    padding: 15px;
+ }
